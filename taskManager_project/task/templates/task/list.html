@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_headers %}
+	<link rel="stylesheet" type="text/css" href="{% static 'task/list.css' %}">
+{% endblock extra_headers %}
+
+{% block header %}
+	<h1>Liste des tâches</h1>
+{% endblock header %}
+
+{% block foreground %}
+	{% for task in tasks %}
+		<a href="{% url 'task:details' %}?id={{task.id}}" class="task"><p>{{ task.title }}</p></a>
+	{% endfor %}
+{% endblock foreground %}

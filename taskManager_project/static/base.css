@@ -1,0 +1,100 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	color: white;
+	min-height: 100px;
+	background-color: #999;
+}
+
+header > h1 {
+	margin: 0;
+}
+
+.home_btn, .plus_btn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70%;
+	aspect-ratio: 1 / 1;
+	border: 3px solid white;
+	border-radius: 10%;
+}
+
+.home_btn {
+	margin-left: 10px;
+}
+
+.plus_btn {
+	margin-right: 10px;
+}
+
+.home_btn > img, .plus_btn > img {
+	max-width: 80%;
+	max-height: 80%;
+	aspect-ratio: auto;
+}
+
+.foreground {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	min-height: 100vh;
+	width: 80%;
+
+	padding: 30px;
+
+	font-size: 30px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.btn {
+	font-size: 20px;
+	font-family: Arial;
+	font-weight: bold;
+
+	padding: 1px;
+}
+
+.btn--green {
+	background-color: darkgreen;
+	border: 1px solid darkgreen;
+	border-radius: 5px;
+	color: white;
+}
+
+.btn--red {
+	background-color: darkred;
+	border: 1px solid darkred;
+	border-radius: 5px;
+	color: white;
+}
+
+.btn--blue {
+	background-color: darkblue;
+	border: 1px solid darkblue;
+	border-radius: 5px;
+	color: white;
+}

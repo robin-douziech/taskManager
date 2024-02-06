@@ -1,0 +1,11 @@
+.task {
+	width: 70%;
+	margin: 10px 0;
+	box-shadow: 0 0 8px 0 #9b9b9b;
+	border-radius: 5px;
+}
+
+.task > p {
+	text-align: center;
+	margin: 10px;
+}

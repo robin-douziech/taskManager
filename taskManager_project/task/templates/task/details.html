@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block extra_headers %}
+	<link rel="stylesheet" type="text/css" href="{% static 'form.css' %}">
+{% endblock extra_headers %}
+
+{% block header %}
+	<h1>{{ task.title }}</h1>
+{% endblock header %}
+
+{% block foreground %}
+	<form action="" method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<div class="btn-bar">
+			<a href="{% url 'task:delete' %}?id={{task.id}}" class="btn btn--red">supprimer</a>
+			<input type="submit" class="btn btn--blue" value="sauvegarder">
+			<a href="{% url 'task:delete' %}?id={{task.id}}" class="btn btn--green">travail terminé</a>
+		</div>
+	</form>
+{% endblock foreground %}

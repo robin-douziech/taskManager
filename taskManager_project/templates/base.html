@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+	<head>
+		<title>Task Manager</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+		{% block extra_headers %}{% endblock extra_headers %}
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+	</head>
+	<body>
+
+		<header>
+			<a href="{% url 'task:list' %}" class="home_btn">
+				<img src="{% static 'images/task.png' %}">
+			</a>
+			{% block header %}
+			{% endblock header %}
+			<a href="{% url 'task:create' %}" class="plus_btn">
+				<img src="{% static 'images/plus.png' %}">
+			</a>
+		</header>
+
+		<div class="foreground">
+			{% block foreground %}
+			{% endblock foreground %}
+		</div>
+
+		<footer>
+			{% block footer %}
+			{% endblock footer %}
+		</footer>
+
+	</body>
+</html>
