@@ -13,6 +13,7 @@ SECRET_KEY = os.getenv('TOKEN')
 if ENV == "PROD" :
     DEBUG = False
     ALLOWED_HOSTS = ['127.0.0.1', '37.187.39.48']
+    CSRF_TRUSTED_ORIGINS = ['http://37.187.39.48:9874']
 else :
     DEBUG = True
     ALLOWED_HOSTS = []
