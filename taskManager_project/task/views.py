@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 
 from . import models, forms
 
@@ -18,8 +19,7 @@ def details(request):
 			if form.is_valid():
 				form.save()
 		return render(request, 'task/details.html', {'form': form, 'task':task})
-		
-	return redirect('/')
+	return redirect(reverse('task:list'))
 
 def create(request):
 	form = forms.TaskForm()
@@ -27,7 +27,7 @@ def create(request):
 		form = forms.TaskForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('/')
+			return redirect(reverse('task:list'))
 	return render(request, 'task/create.html', {'form': form})
 
 def delete(request):
@@ -35,4 +35,4 @@ def delete(request):
 	if task_id:
 		task = get_object_or_404(models.Task, pk=task_id)
 		task.delete()
-	return redirect('/')
+	return redirect(reverse('task:list'))
